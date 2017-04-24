@@ -5,9 +5,47 @@
   <link rel="stylesheet" href="build/css/styles.css">
   <script src="build/js/vendor.min.js"></script>
   <script type="text/javascript" src="build/js/app.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-select.min.css">
+  <script src="bower_components/bootstrap/dist/js/bootstrap-select.min.js"></script>
   <title>miDoctor</title>
 </head>
   <body>
-    <h1>Hello</h1>
+    <div class="container">
+      <div class="well">
+
+          <form id="find-doctor" action="#">
+            <div class="form-group">
+              <label>Enter Medical Issue:</label>
+              <input id="medical-issue" type="text" required>
+            </div>
+            <div class="form-group">
+              <label>Enter Max Distance:</label>
+              <input id="distance" type="number" required>
+            </div>
+          <div class="form-group">
+            <label>Sort-by:</label>
+            <select class="selectpicker" id="sort" data-live-search="true">
+              <option value="full-name-asc">full-name-asc</option>
+              <option value="full-name-desc">full-name-desc</option>
+              <option value="last-name-asc">last-name-asc</option>
+              <option value="last-name-desc">last-name-desc</option>
+              <option value="first-name-asc">first-name-asc</option>
+              <option value="first-name-des">first-name-desc</option>
+              <option value="best-match-asc">best-match-asc</option>
+              <option value="best-match-desc">best-match-desc</option>
+              <option value="rating-asc">rating-asc</option>
+              <option value="rating-desc">rating-desc</option>
+              <option value="distance-asc">distance-asc</option>
+              <option value="distance-desc">distance-desc</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Enter Max Doctors Displayed</label>
+            <input id="distance" type="number" required>
+          </div>
+          <button type="submit">Find Doctors</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
