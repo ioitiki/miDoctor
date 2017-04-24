@@ -10,6 +10,18 @@
   <title>miDoctor</title>
 </head>
   <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="/"><img src="/images/icon.png" id="home-icon" /></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/stylists">Current Employees</a></li>
+          <li><a href="/clients">Current Clients</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
       <div class="well">
 
@@ -41,7 +53,7 @@
           </div>
           <div class="form-group">
             <label>Enter Max Doctors Displayed</label>
-            <input id="distance" type="number" required>
+            <input id="limit" type="number" required>
           </div>
           <button type="submit">Find Doctors</button>
         </form>
