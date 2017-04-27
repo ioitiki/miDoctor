@@ -5,8 +5,8 @@
   <link rel="stylesheet" href="build/css/styles.css">
   <script src="build/js/vendor.min.js"></script>
   <script type="text/javascript" src="build/js/app.js"></script>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-select.min.css">
-  <script src="bower_components/bootstrap/dist/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+  <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
   <title>miDoctor</title>
 </head>
   <body>
@@ -15,48 +15,68 @@
         <div class="navbar-header">
           <a href="/"><img src="/images/icon.png" id="home-icon" /></a>
         </div>
-        <ul class="nav navbar-nav">
-          <li><a href="/stylists">Current Employees</a></li>
+        <ul class="nav navbar-nav pull-right">
+          <li><a href="/stylists">Doctors</a></li>
           <li><a href="/clients">Current Clients</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </div>
     </nav>
+    <div class="container col-md-6 col-md-offset-3">
+      <div class="header">
+        <img src="/images/icon.png" class="center-block banner-logo" alt="logo" />
+        <h1 id="logo">miDoctor</h1>
+        <h2 class="center-text">"Find Doctors near Portland, OR Tailored to your Needs!"</h2>
+      </div>
+    </div>
     <div class="container">
-      <div class="well">
-
-          <form id="find-doctor" action="#">
+      <div class="well col-md-8 col-md-offset-2" id="doctor-form">
+        <form id="find-doctor" action="#">
+          <div class="form-inline">
             <div class="form-group">
-              <label>Enter Medical Issue:</label>
-              <input id="medical-issue" type="text" required>
+              <label>Enter Medical Issue: </label>
+              <input id="symptom" type="text" required>
             </div>
             <div class="form-group">
-              <label>Enter Max Distance:</label>
-              <input id="distance" type="number" required>
+              <label>Enter Max Distance: </label>
+              <input id="distance" type="text" required>
             </div>
-          <div class="form-group">
-            <label>Sort-by:</label>
-            <select class="selectpicker" id="sort" data-live-search="true">
-              <option value="full-name-asc">full-name-asc</option>
-              <option value="full-name-desc">full-name-desc</option>
-              <option value="last-name-asc">last-name-asc</option>
-              <option value="last-name-desc">last-name-desc</option>
-              <option value="first-name-asc">first-name-asc</option>
-              <option value="first-name-des">first-name-desc</option>
-              <option value="best-match-asc">best-match-asc</option>
-              <option value="best-match-desc">best-match-desc</option>
-              <option value="rating-asc">rating-asc</option>
-              <option value="rating-desc">rating-desc</option>
-              <option value="distance-asc">distance-asc</option>
-              <option value="distance-desc">distance-desc</option>
-            </select>
           </div>
-          <div class="form-group">
-            <label>Enter Max Doctors Displayed</label>
-            <input id="limit" type="number" required>
+          <div class="form-inline">
+            <div class="form-group">
+              <label>Sort-by: </label>
+              <select class="selectpicker" id="sort" data-live-search="true">
+                <option value="full-name-asc">Full Name Asc</option>
+                <option value="full-name-desc">Full Name Desc</option>
+                <option value="last-name-asc">Last Name Asc</option>
+                <option value="last-name-desc">Last Name Desc</option>
+                <option value="first-name-asc">First Name Asc</option>
+                <option value="first-name-des">First Name Desc</option>
+                <option value="best-match-asc">Best Match Asc</option>
+                <option value="best-match-desc">Best Match Desc</option>
+                <option value="rating-asc">Rating Asc</option>
+                <option value="rating-desc">Rating Desc</option>
+                <option value="distance-asc">Distance Asc</option>
+                <option value="distance-desc">Distance Desc</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Enter Max Doctors Displayed: </label>
+              <input id="limit" type="text" required>
+            </div>
           </div>
           <button type="submit">Find Doctors</button>
         </form>
+      </div>
+      <div class="row well" id="doctor-div">
+        <div id="doctor-results">
+          <h1>Doctors meeting your needs: </h1>
+          <div id="name"><h3>Name: <span></span></h3></div>
+          <div id="website"><h3>Website: <span></span></h3></div>
+          <div id="visit-address"><h3>Adress: <span></span></h3></div>
+          <div id="phone-number"><h3>Phone Number: <span></span></h3></div>
+          <div id="specialties-name"><h3>Specialty: <span></span></h3></div>
+        </div>
       </div>
     </div>
   </body>

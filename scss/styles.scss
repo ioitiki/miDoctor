@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
 body {
   background-color: grey;
 }
@@ -9,6 +12,39 @@ body {
   margin-left: 0px;
 }
 
+#logo {
+  font-family: 'Indie Flower';
+  font-size: 130px;
+  text-decoration: none;
+}
+
+#doctor-form {
+  margin-top: 30px;
+}
+
+h2 {
+  color: #212922;
+  font-family: 'Oswald', sans-serif;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.banner-logo {
+  float: left;
+  margin-right: 30px;
+  width: 150px;
+  height: 150px;
+}
+
 .container {
   margin-top: 20px;
+}
+
+.header h1 {
+  position: relative;
+  color: #212922;
+  top: 18px;
+  left: 10px;
 }

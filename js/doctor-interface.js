@@ -1,12 +1,27 @@
 var Doctor = require('./../js/doctor.js').doctorModule;
 
-$(document).ready(function() {
-  var currentDoctorObject  = new Doctor();
 
-  $('#getLocation').submit(function() {
+var dispalyDoctors = function(practicesArray) {
+  $('#doctor-div').hide();
+
+};
+
+$(document).ready(function() {
+  var currentDoctorObject;
+  $('#doctor-div').hide();
+
+
+  $('#find-doctor').submit(function() {
     event.preventDefault();
-    var address = $("#location").val();
-    var address2 = currentDoctorObject.getFormattedLocation(address);
-    currentDoctorObject.findDoctors('back', address2, '100', 'rating-desc', '10');
+    currentDoctorObject  = new Doctor();
+    var symptom = $("#symptom").val();
+    var distance = $("#distance").val();
+    var sort = $("#sort").val();
+    var limit = $("#limit").val();
+
+    currentDoctorObject.findDoctors(symptom, distance, sort, limit, dispalyDoctors);
+
+    $('#doctor-div').show();
+
   });
 });
