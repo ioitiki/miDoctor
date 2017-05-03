@@ -1,24 +1,28 @@
 var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctors = function(formattedArray) {
-  var $table = $( "<table></table>" );
+  $("#doctor-div").text("");
+
+  var $table = $( "<table><th>Pracice</th><th>Phone Number</th><th>Address</th></table>" );
 
   for ( var i = 0; i < formattedArray.length; i++ ) {
       var practice = formattedArray[i];
       var $line = $( "<tr></tr>" );
       $line.append( $( "<td></td>" ).html( practice[0] ) );
       $line.append( $( "<td></td>" ).html( practice[1].number ) );
-      $line.append( $( "<td></td>" ).html( practice[2].street ) );
+      $line.append( $( "<td></td>" ).html( practice[2].street + " " + practice[2].city + ", OR " + practice[2].zip ) );
       $table.append( $line );
   }
 
-  $table.appendTo(document.body);
+  $('#doctor').show();
+
+  $table.appendTo('#doctor-div');
 };
 
 
 $(document).ready(function() {
   var currentDoctorObject;
-  $('#doctor-div').hide();
+  $('#doctor').hide();
 
   $('#find-doctor').submit(function() {
     currentDoctorObject  = new Doctor();
