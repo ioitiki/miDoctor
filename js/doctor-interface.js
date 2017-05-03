@@ -1,9 +1,11 @@
 var Doctor = require('./../js/doctor.js').doctorModule;
+var currentDoctorObject = new Doctor();
+var load = function(formattedArray) {location.reload();};
 
 var displayDoctors = function(formattedArray) {
   $("#doctor-div").text("");
 
-  var $table = $( "<table><th>Pracice</th><th>Phone Number</th><th>Address</th></table>" );
+  var $table = $("<table><th>Pracice</th><th>Phone Number</th><th>Address</th></table>");
 
   for ( var i = 0; i < formattedArray.length; i++ ) {
       var practice = formattedArray[i];
@@ -21,17 +23,16 @@ var displayDoctors = function(formattedArray) {
 
 
 $(document).ready(function() {
-  var currentDoctorObject;
+  currentDoctorObject.findDoctors('rash', 100, 'best-match-asc', 10, load);
+
   $('#doctor').hide();
 
   $('#find-doctor').submit(function() {
-    currentDoctorObject  = new Doctor();
     var symptom = $("#symptom").val();
     var distance = $("#distance").val();
     var sort = $("#sort").val();
     var limit = $("#limit").val();
 
     currentDoctorObject.findDoctors(symptom, distance, sort, limit, displayDoctors);
-
   });
 });

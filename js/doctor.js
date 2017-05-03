@@ -18,9 +18,7 @@ Doctor.prototype.findDoctors = function(symptom, distance, sort, limit, displayD
       for (var i = 0; i < array.length; i++) {
         formattedArray.push([array[i].name, array[i].phones[0], array[i].visit_address]);
       }
-    })
-
-    console.log(formattedArray);
+    });
 
     displayDoctors(formattedArray);
   });
