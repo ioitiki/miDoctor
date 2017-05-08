@@ -19,6 +19,11 @@ _miDoctor is a JavaScript web-application built using Node, Bower and Gulp which
 * _Finally launch the application by running:_ `gulp serve`.
 
 
+## Known Bugs
+
+* _Upon intial loadoing of the site you must submit your request twice._
+
+
 ### License
 
 Copyright (c) 2017 **_Andrew Malkin_**

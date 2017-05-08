@@ -23,7 +23,6 @@ var displayDoctors = function(formattedArray) {
 
 
 $(document).ready(function() {
-  currentDoctorObject.findDoctors('rash', 100, 'best-match-asc', 10, load);
 
   $('#doctor').hide();
 
