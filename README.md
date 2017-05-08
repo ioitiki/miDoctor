@@ -11,6 +11,7 @@ _miDoctor is a JavaScript web-application built using Node, Bower and Gulp which
 ## Setup/Installation Requirements
 
 * _Clone the miDoctor repository [here](https://github.com/ioitiki/miDoctor)._
+* _Create .env file in the root directory and add the following(replacing YOUR_API_KEY with your personal key form BetterDoctor):_ `exports.apiKey = "YOUR_API_KEY";`
 * _Brew or Scoop install node, bower, and gulp._
 * _Install all necessary modules and dependencies:_
     * _navigate to the miDoctor base directory and run:_ `npm install`,

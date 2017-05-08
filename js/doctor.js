@@ -11,21 +11,12 @@ Doctor.prototype.findDoctors = function(symptom, distance, sort, limit, displayD
 
   $.getJSON(url)
   .then(function(response) {
-    console.log(response);
     for (var i = 0; i < response.meta.count; i++) {
       practicesArray.push(response.data[i].practices);
     }
     for (var i = 0; i < response.meta.count; i++) {
       formattedArray1.push([practicesArray[i][0].name, practicesArray[i][0].phones[0], practicesArray[i][0].visit_address]);
-    }
-    console.log(formattedArray1);
-    var newArray = practicesArray.map(function(array) {
-      for (var i = 0; i < array.length; i++) {
-        formattedArray2.push([array[i].name, array[i].phones[0], array[i].visit_address]);
-      }
-    });
-
-    console.log(formattedArray2);
+    };
     displayDoctors(formattedArray1);
   });
 };
